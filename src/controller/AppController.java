@@ -1,7 +1,7 @@
 package controller;
 
 import service.ZakatService;
-import util.ConsoleHelper;
+import console.ConsoleHelper;
 import ui.*;
 import data.FoodData;
 
