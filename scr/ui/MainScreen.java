@@ -1,19 +1,19 @@
 package ui;
 
-import java.util.Scanner;
+import consle.ConsoleHelper;
 
 public class MainScreen extends Screen {
 
-    public MainScreen() {
-    }
-
     @Override
     public void show() {
-        System.out.println("================================");
+        displayHeader("Zakat Fitr Calculator");
+
+        ConsoleHelper.clear();
+
+        System.out.println("===========================================");
         System.out.println("Welcome to the Zakat Fitr Calculator!");
-        System.out.println("================================");
+        System.out.println("===========================================");
         System.out.println("\nPress Enter to Start...");
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
+        ConsoleHelper.pause();
     }
 }
