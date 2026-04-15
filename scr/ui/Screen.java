@@ -1,5 +1,5 @@
 package ui;
 
-public abstract class Screen {
+public abstract class Screenw {
     public abstract void show();
 }
