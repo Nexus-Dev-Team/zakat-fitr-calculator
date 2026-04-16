@@ -22,4 +22,13 @@ public final class Category {
         return kiloPerPerson;
     }
 
+    public void setFoodName(String foodName){
+
+        this.foodName = foodName;
+    }
+    public void setKiloPerPerson(double kiloPerPerson){
+
+        this.kiloPerPerson = kiloPerPerson;
+    }
+
 }
