@@ -36,7 +36,7 @@ public class AppController {
         MenuScreen.show();
         int choice = ConsoleHelper.readIntInRange(1, FoodData.getList().size());
         // ** Get kg per person chosen food **
-        double kgPerPerson = FoodData.getList().get(choice - 1).kiloPerSa3;
+        double kgPerPerson = FoodData.getList().get(choice - 1).getKiloPerSa3();
 
         // **Calculate total zakat weight**
         double totalKg = ZakatService.calculate(familyMembers, kgPerPerson);
