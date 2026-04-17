@@ -30,5 +30,4 @@ public final class Category {
 
         this.kiloPerPerson = kiloPerPerson;
     }
-
 }
