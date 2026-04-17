@@ -9,6 +9,7 @@ public class ConsoleHelper {
     public static int readInt() {
         while (!input.hasNextInt()) {
             input.next();
+            System.out.println("Invalid value, Please enter integer number.");
         }
         return input.nextInt();
     }
@@ -16,6 +17,8 @@ public class ConsoleHelper {
     public static float readFloat() {
         while (!input.hasNextFloat()) {
             input.next();
+            System.out.println("Invalid value, Please enter decimal number.");
+
         }
         return input.nextFloat();
     }
@@ -23,6 +26,8 @@ public class ConsoleHelper {
     public static double readDouble() {
         while (!input.hasNextDouble()) {
             input.next();
+            System.out.println("Invalid value, Please enter decimal number.");
+
         }
         return input.nextDouble();
     }
@@ -34,6 +39,10 @@ public class ConsoleHelper {
             if (number >= min && number <= max) {
                 return number;
             }
+            else 
+            {
+            System.out.println("Invalid value, Please enter integer number from " + min + " to " + max + ".");
+            }
         }
     }
 
@@ -43,6 +52,10 @@ public class ConsoleHelper {
             number = readFloat();
             if (number >= min && number <= max) {
                 return number;
+            }
+            else
+            {
+            System.out.println("Invalid value, Please enter decimal number from " + min + " to " + max + "." );
             }
         }
     }
@@ -54,17 +67,21 @@ public class ConsoleHelper {
             if (number >= min && number <= max) {
                 return number;
             }
+            else
+            {
+            System.out.println("Invalid value, Please enter decimal number from " + min + " to " + max + "." );
+            }
         }
     }
 
     public static void pause() {
-        // any key have ASCII vlaue 
         try {
-            int key;
-            while ((key = System.in.read()) != '\n' && key != '\r') {
+            // any key on keyboard have ASCII vlaue 
+            int ch;
+            while ((ch = System.in.read()) != '\n' && ch != '\r') {
             }
         } catch (Exception e) {
-            e.printStackTrace(); 
+            e.printStackTrace();
         }
     }
 
