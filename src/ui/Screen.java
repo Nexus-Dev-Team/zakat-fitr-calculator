@@ -11,7 +11,7 @@ public abstract class Screen {
         System.out.println(); 
     }
     
-    private void line(char c) {
+    protected void line(char c) {
         int totalWidth = 50; 
         System.out.println(String.valueOf(c).repeat(totalWidth));
     }
