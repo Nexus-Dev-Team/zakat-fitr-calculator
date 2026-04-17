@@ -1,4 +1,4 @@
-package ui;
+package model;
 
 public final class Category {
 
@@ -30,5 +30,4 @@ public final class Category {
 
         this.kiloPerPerson = kiloPerPerson;
     }
-
 }
