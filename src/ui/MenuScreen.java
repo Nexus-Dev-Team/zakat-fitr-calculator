@@ -1,7 +1,5 @@
 package ui;
 
-import java.util.List;
-import model.Category;
 import data.FoodData;
 
 public class MenuScreen extends Screen {
