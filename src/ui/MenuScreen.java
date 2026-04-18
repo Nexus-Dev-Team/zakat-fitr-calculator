@@ -6,20 +6,18 @@ import data.FoodData;
 
 public class MenuScreen extends Screen {
 
-    private String title = "Available categories";
-
     @Override
     public void show() {
 
-        displayHeader(title);
+        displayHeader("Available categories");
 
-        for (int i = 0; i < FoodData.foodList.size(); i++) {
-            System.out.println("[" + (i + 1) + "- " + FoodData.foodList.get(i).getFoodName() + "]");
+        for (int i = 0; i < FoodData.getFoodList.size(); i++) {
+            System.out.println("[" + (i + 1) + "- " + FoodData.getFoodList.get(i).getFoodName() + "]");
         }
 
         line('=');
 
-        System.out.print("Enter the number of Category you need😊:");
+        System.out.println("Enter the number of Category you need😊:");
 
     }
 
