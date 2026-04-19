@@ -7,7 +7,7 @@ public class ResultScreen extends Screen {
         System.out.println("Oops! No results to show, try again please . . .\n");
     }
 
-    public void show(int totalKG) {
+    public void show(double totalKG) {
         displayHeader("Your Results");
         System.out.println("The total amount of the family: " + totalKG + "Kg");
         System.out.println("● Thanks for using our program︎");
