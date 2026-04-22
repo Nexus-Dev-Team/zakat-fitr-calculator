@@ -2,32 +2,24 @@ package model;
 
 public final class Category {
 
-    private String foodName;
-    private double kiloPerPerson;
+    private final String foodName;
+    private final double kiloPerPerson;
 
-    public Category(String foodName , double kiloPerPerson){
+    public Category(String foodName, double kiloPerPerson) {
 
         this.foodName = foodName;
         this.kiloPerPerson = kiloPerPerson;
 
     }
-     
-    public String getFoodName(){
+
+    public String getFoodName() {
 
         return foodName;
     }
 
-    public double getKiloPerPerson(){
+    public double getKiloPerPerson() {
 
         return kiloPerPerson;
     }
 
-    public void setFoodName(String foodName){
-
-        this.foodName = foodName;
-    }
-    public void setKiloPerPerson(double kiloPerPerson){
-
-        this.kiloPerPerson = kiloPerPerson;
-    }
 }

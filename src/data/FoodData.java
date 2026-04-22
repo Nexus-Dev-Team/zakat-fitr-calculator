@@ -1,6 +1,9 @@
 package data;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import model.Category;
 
 public class FoodData {
@@ -13,7 +16,7 @@ public class FoodData {
         foodList.add(new Category("Wheat" , 2.040));
     }
 
-    public static ArrayList<Category> getFoodList() {
-        return foodList;
+    public static List<Category> getFoodList() {
+        return Collections.unmodifiableList(foodList);
     }
 }

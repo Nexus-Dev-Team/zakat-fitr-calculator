@@ -8,12 +8,12 @@ public class MenuScreen extends Screen {
     public void show() {
 
         displayHeader("Available categories");
-
-        for (int i = 0; i < FoodData.getFoodList().size(); i++) {
-            System.out.println("\t[" + (i + 1) + "} " + FoodData.getFoodList().get(i).getFoodName());
+        var foods = FoodData.getFoodList();
+        for (int i = 0; i <foods.size(); i++) {
+            System.out.println("\t[" + (i + 1) + "] " + foods.get(i).getFoodName());
         }
         
-        System.out.println("Enter the number of Category you need😊:");
+        System.out.println("\nEnter the number of Category you need😊:");
 
     }
 

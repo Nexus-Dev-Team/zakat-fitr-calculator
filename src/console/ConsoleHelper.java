@@ -6,30 +6,48 @@ public class ConsoleHelper {
 
     private static Scanner input = new Scanner(System.in);
 
+    //
     public static int readInt() {
-        while (!input.hasNextInt()) {
-            input.next();
-            System.out.println("Invalid value, Please enter integer number.");
+        while (true) {
+            try {
+                int number = Integer.parseInt(input.nextLine().trim());
+                if (number > 0) {
+                    return number;
+                } else {
+                    System.out.println("Please , Enter number greater than 0 ");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid value, Please enter integer number.");
+            }
         }
-        return input.nextInt();
     }
 
     public static float readFloat() {
-        while (!input.hasNextFloat()) {
-            input.next();
-            System.out.println("Invalid value, Please enter decimal number.");
-
+        while (true) {
+            try {
+                float number = Float.parseFloat(input.nextLine().trim());
+                if (number > 0)
+                    return number;
+                else
+                    System.out.println("Please enter a number greater than 0.");
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid value, please enter a decimal number.");
+            }
         }
-        return input.nextFloat();
     }
 
     public static double readDouble() {
-        while (!input.hasNextDouble()) {
-            input.next();
-            System.out.println("Invalid value, Please enter decimal number.");
-
+        while (true) {
+            try {
+                double number = Double.parseDouble(input.nextLine().trim());
+                if (number > 0)
+                    return number;
+                else
+                    System.out.println("Please enter a number greater than 0.");
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid value, please enter a decimal number.");
+            }
         }
-        return input.nextDouble();
     }
 
     public static int readIntInRange(int min, int max) {
@@ -38,10 +56,8 @@ public class ConsoleHelper {
             number = readInt();
             if (number >= min && number <= max) {
                 return number;
-            }
-            else 
-            {
-            System.out.println("Invalid value, Please enter integer number from " + min + " to " + max + ".");
+            } else {
+                System.out.println("Invalid value, Please enter integer number from " + min + " to " + max + ".");
             }
         }
     }
@@ -52,10 +68,8 @@ public class ConsoleHelper {
             number = readFloat();
             if (number >= min && number <= max) {
                 return number;
-            }
-            else
-            {
-            System.out.println("Invalid value, Please enter decimal number from " + min + " to " + max + "." );
+            } else {
+                System.out.println("Invalid value, Please enter decimal number from " + min + " to " + max + ".");
             }
         }
     }
@@ -66,23 +80,15 @@ public class ConsoleHelper {
             number = readDouble();
             if (number >= min && number <= max) {
                 return number;
-            }
-            else
-            {
-            System.out.println("Invalid value, Please enter decimal number from " + min + " to " + max + "." );
+            } else {
+                System.out.println("Invalid value, Please enter decimal number from " + min + " to " + max + ".");
             }
         }
     }
 
     public static void pause() {
-        try {
-            // any key on keyboard have ASCII vlaue 
-            int ch;
-            while ((ch = System.in.read()) != '\n' && ch != '\r') {
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        System.out.println("Press \"Enter\" to continue...");
+        input.nextLine();
     }
 
     public static void clear() {
@@ -116,7 +122,16 @@ public class ConsoleHelper {
                 new ProcessBuilder("clear").inheritIO().start().waitFor();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
+
+            // print 50 lines as a simulation of the "clear" function
+            for (int i = 0; i < 50; i++) {
+                System.out.println();
+            }
         }
+    }
+
+    public static void closeScanner() {
+        input.close();
     }
 }

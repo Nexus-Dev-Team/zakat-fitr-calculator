@@ -1,6 +1,7 @@
 package controller;
 
 import service.ZakatService;
+import model.Category;
 import console.ConsoleHelper;
 import ui.*;
 import data.FoodData;
@@ -16,33 +17,36 @@ public class AppController {
             System.out.print("Do you want to try again? (1: Yes / 2: No): ");
             shouldContinue = (ConsoleHelper.readIntInRange(1, 2) == 1);
         } while (shouldContinue);
+
+        new ResultScreen().displayEndMessage();
+        ConsoleHelper.closeScanner();
     }
 
     private static void showWelcomeScreen() {
         // ** welcome screen **
         ConsoleHelper.clear();
-        MainScreen.show();
+        new MainScreen().show();
         ConsoleHelper.pause();
     }
 
     private static void processZakatCycle() {
         // ** Read number of family members **
         ConsoleHelper.clear();
-        InputScreen.show();
+        new InputScreen().show();
         int familyMembers = ConsoleHelper.readInt();
 
         // ** show food category menu **
         ConsoleHelper.clear();
-        MenuScreen.show();
-        int choice = ConsoleHelper.readIntInRange(1, FoodData.getList().size());
-        // ** Get kg per person chosen food **
-        double kgPerPerson = FoodData.getList().get(choice - 1).getKiloPerSa3();
+        new MenuScreen().show();
+        int choice = ConsoleHelper.readIntInRange(1, FoodData.getFoodList().size());
 
-        // **Calculate total zakat weight**
-        double totalKg = ZakatService.calculate(familyMembers, kgPerPerson);
+        // **Calculate total zakat weight after know the value of kiloPerPerson for choosen category**
+        Category selected = FoodData.getFoodList().get(choice - 1);
+        double totalKg = ZakatService.calculate(familyMembers, selected.getKiloPerPerson());
 
         // ** Show result **
         ConsoleHelper.clear();
-        ResultScreen.show(totalKg);
+        new ResultScreen().show(totalKg, selected.getFoodName());
     }
+
 }

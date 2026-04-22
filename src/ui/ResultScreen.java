@@ -7,12 +7,18 @@ public class ResultScreen extends Screen {
         System.out.println("Oops! No results to show, try again please . . .\n");
     }
 
-    public void show(double totalKG) {
+    public void show(double totalKG, String foodName) {
         displayHeader("Your Results");
-        System.out.println("The total amount of the family: " + totalKG + "Kg");
-        System.out.println("● Thanks for using our program︎");
-        System.out.println("● With our team greetings"); 
-        System.out.println("● ©︎opy®︎ight is reserved 2026 ");
-        System.out.println("● By Nexus ™︎ ");
+        System.out.printf(" The total amount of the family: %.2f Kg " + "(" + foodName + ")", totalKG);
+
+    }
+
+    public void displayEndMessage() {
+
+        System.out.println("\n* Thanks for using our program");
+        System.out.println("* With our team greetings");
+        System.out.println("* ©opy®ight is reserved 2026 ");
+        System.out.println("* By Nexus Team ");
+
     }
 }
