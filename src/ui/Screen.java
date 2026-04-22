@@ -13,7 +13,7 @@ public abstract class Screen {
         System.out.println(); 
     }
     
-    private void line(char c) {
+    protected void line(char c) {
         System.out.println(String.valueOf(c).repeat(TOTAL_WIDTH));
     }
 

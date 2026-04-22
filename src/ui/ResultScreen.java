@@ -9,8 +9,9 @@ public class ResultScreen extends Screen {
 
     public void show(double totalKG, String foodName) {
         displayHeader("Your Results");
-        System.out.printf(" The total amount of the family: %.2f Kg " + "(" + foodName + ")", totalKG);
-
+        System.out.printf("\t\t\t\tThe total amount: %.2f Kg " + "(" + foodName + ")", totalKG);
+        System.out.println('\n');
+        line('=');
     }
 
     public void displayEndMessage() {

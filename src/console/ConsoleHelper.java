@@ -6,7 +6,6 @@ public class ConsoleHelper {
 
     private static Scanner input = new Scanner(System.in);
 
-    //
     public static int readInt() {
         while (true) {
             try {
