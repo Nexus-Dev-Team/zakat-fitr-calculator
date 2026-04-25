@@ -33,7 +33,7 @@ public class AppController {
         // ** Read number of family members **
         ConsoleHelper.clear();
         new InputScreen().show();
-        int familyMembers = ConsoleHelper.readInt();
+        int familyMembers = ConsoleHelper.readPositiveInteger();
 
         // ** show food category menu **
         ConsoleHelper.clear();

@@ -18,6 +18,10 @@ public class MainScreen extends Screen {
         System.out.println("║     =>  Choose from multiple food categories             ║");
         System.out.println("║     =>  Get accurate required amount instantly           ║");
         System.out.println("║                                                          ║");
+        System.out.println("╠══════════════════════════════════════════════════════════╣");
+        System.out.println("║                                                          ║");
+        System.out.println("║              Press ENTER to start...                     ║");
+        System.out.println("║                                                          ║");
         System.out.println("╚══════════════════════════════════════════════════════════╝");
     }
 }

@@ -6,7 +6,7 @@ public class ConsoleHelper {
 
     private static Scanner input = new Scanner(System.in);
 
-    public static int readInt() {
+    public static int readPositiveInteger() {
         while (true) {
             try {
                 int number = Integer.parseInt(input.nextLine().trim());
@@ -21,14 +21,24 @@ public class ConsoleHelper {
         }
     }
 
+    public static int readInt() {
+        while (true) {
+            try {
+                int number = Integer.parseInt(input.nextLine().trim());
+                return number;
+
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid value, Please enter integer number.");
+            }
+        }
+    }
+
     public static float readFloat() {
         while (true) {
             try {
                 float number = Float.parseFloat(input.nextLine().trim());
-                if (number > 0)
-                    return number;
-                else
-                    System.out.println("Please enter a number greater than 0.");
+                return number;
+
             } catch (NumberFormatException e) {
                 System.out.println("Invalid value, please enter a decimal number.");
             }
@@ -39,10 +49,8 @@ public class ConsoleHelper {
         while (true) {
             try {
                 double number = Double.parseDouble(input.nextLine().trim());
-                if (number > 0)
-                    return number;
-                else
-                    System.out.println("Please enter a number greater than 0.");
+                return number;
+
             } catch (NumberFormatException e) {
                 System.out.println("Invalid value, please enter a decimal number.");
             }
@@ -86,7 +94,6 @@ public class ConsoleHelper {
     }
 
     public static void pause() {
-        System.out.println("Press \"Enter\" to continue...");
         input.nextLine();
     }
 
