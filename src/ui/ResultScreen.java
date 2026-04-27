@@ -18,8 +18,8 @@ public class ResultScreen extends Screen {
 
         System.out.println("\n* Thanks for using our program");
         System.out.println("* With our team greetings");
-        System.out.println("* ©opy®ight is reserved 2026 ");
+        System.out.println("* Copyright (C) is reserved 2026 ");
         System.out.println("* By Nexus Team ");
-
+        
     }
 }
